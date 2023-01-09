@@ -20,10 +20,19 @@ use Stancl\Tenancy\Middleware\PreventAccessFromUnwantedDomains;
 
 Route::middleware([
     'web',
-    InitializeTenancyByDomainOrSubdomain::class,
-    PreventAccessFromUnwantedDomains::class,
 ])->group(function () {
-    Route::get('/', function () {
-        return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
-    });
+    Route::get('/tenant-welcome', function () {
+        return view('welcome');
+    })->name('tenant.welcome');
+});
+
+Route::middleware([
+    'web',
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/tenant-dashboard', function () {
+        return view('dashboard');
+    })->name('tenant.dashboard');
 });

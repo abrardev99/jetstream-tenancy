@@ -251,7 +251,7 @@ return [
          * disable asset() helper tenancy and explicitly use tenant_asset() calls in places
          * where you want to use tenant-specific assets (product images, avatars, etc).
          */
-        'asset_helper_tenancy' => true,
+        'asset_helper_tenancy' => false,
     ],
 
     /**
@@ -301,7 +301,7 @@ return [
      *
      * If false, all routes are made central by default. To make them tenant, apply the 'tenant' middleware.
      */
-    'default_to_tenant_routes' => false,
+    'default_to_tenant_routes' => true,
 
     /**
      * Parameters used by the tenants:migrate command.
