@@ -25,16 +25,3 @@ Route::middleware([
         return view('welcome');
     })->name('tenant.welcome');
 });
-
-
-Route::middleware([
-    'web',
-    'universal',
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/tenant-dashboard', function () {
-        return view('dashboard');
-    })->name('tenant.dashboard');
-});
