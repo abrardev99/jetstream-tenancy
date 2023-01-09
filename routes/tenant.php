@@ -29,6 +29,7 @@ Route::middleware([
 
 Route::middleware([
     'web',
+    'universal',
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
