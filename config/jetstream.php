@@ -5,6 +5,8 @@ use Laravel\Jetstream\Http\Middleware\AuthenticateSession;
 
 return [
 
+    'prefix' => '{tenant}',
+
     /*
     |--------------------------------------------------------------------------
     | Jetstream Stack

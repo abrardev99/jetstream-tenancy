@@ -40,5 +40,8 @@
         @stack('modals')
 
         @livewireScripts
+        <script>
+            window.livewire_app_url = 'http://jetstream-tenancy.test/foo';
+        </script>
     </body>
 </html>
